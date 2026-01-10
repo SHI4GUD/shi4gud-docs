@@ -27,6 +27,7 @@ const sidebars: SidebarsConfig = {
         'smart-contracts/ktv2-contract',
         'smart-contracts/tokenprice-contract',
         'smart-contracts/chainlink-oracle',
+        'smart-contracts/timelock-contract',
       ],
     },
     {

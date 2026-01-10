@@ -14,14 +14,14 @@ You can read the full details of the contract's functionality in the [Ktv2 Contr
 
 | Token  | Burn Bank Address                               |
 | :----- | :---------------------------------------------- |
-| **SHI**    | `0x0B0b9dCac89Cb585fAc7fC7F7A625870Ac8d9693` <a href="https://etherscan.io/address/0x0B0b9dCac89Cb585fAc7fC7F7A625870Ac8d9693" target="_blank" rel="noopener noreferrer" title="Open on Etherscan"><IconExternalLink /></a>   |
-| **SHIB**   | `0x3A8c5868B9625B8C82650C6B25cE0E6e55c767B4` <a href="https://etherscan.io/address/0x3A8c5868B9625B8C82650C6B25cE0E6e55c767B4" target="_blank" rel="noopener noreferrer" title="Open on Etherscan"><IconExternalLink /></a>   |
+| **SHI**    | `0xB1511DfE756342CA14a858B4896983095fEc1B51` (`shi.shi4gud.eth`) <a href="https://etherscan.io/address/0xB1511DfE756342CA14a858B4896983095fEc1B51" target="_blank" rel="noopener noreferrer" title="Open on Etherscan"><IconExternalLink /></a>   |
+| **SHIB**   | `0xE9cAFc8c14C44592aB976F5450D0d40f97668ffc` (`shib.shi4gud.eth`) <a href="https://etherscan.io/address/0xE9cAFc8c14C44592aB976F5450D0d40f97668ffc" target="_blank" rel="noopener noreferrer" title="Open on Etherscan"><IconExternalLink /></a>   |
 
 ### Sepolia (Testnet)
 
 | Token  | Burn Bank Address      |
 | :----- | :--------------------- |
-| **TEST** | `0x6A653395F0CA00205427D98BE7A8947D1b8F82E8` <a href="https://sepolia.etherscan.io/address/0x6A653395F0CA00205427D98BE7A8947D1b8F82E8" target="_blank" rel="noopener noreferrer" title="Open on Sepolia Etherscan"><IconExternalLink /></a>   |
+| **TEST** | `0x4a889E3B1feebeABDe205097a87bF9f6FBe51D1B` <a href="https://sepolia.etherscan.io/address/0x4a889E3B1feebeABDe205097a87bF9f6FBe51D1B" target="_blank" rel="noopener noreferrer" title="Open on Sepolia Etherscan"><IconExternalLink /></a>   |
 
 ## Official Factory Contracts
 
@@ -31,10 +31,10 @@ You can read the full details of the contract's functionality in the [Ktv2Factor
 
 | Network           | Factory Contract Address                        |
 | :---------------- | :---------------------------------------------- |
-| **Ethereum**      | `0xfB348f3975A7BE030a2F672E1eE0265fb5dBF2e2` <a href="https://etherscan.io/address/0xfB348f3975A7BE030a2F672E1eE0265fb5dBF2e2" target="_blank" rel="noopener noreferrer" title="Open on Etherscan"><IconExternalLink /></a> |
-| **Sepolia (Testnet)** | `0xC4C00ad9E1cA3876079f1EC60cE679201ff6d694` <a href="https://sepolia.etherscan.io/address/0xC4C00ad9E1cA3876079f1EC60cE679201ff6d694" target="_blank" rel="noopener noreferrer" title="Open on Etherscan (Sepolia)"><IconExternalLink /></a> |
-| **Base**          | `0x2E64cd7cff7a80D45d7762Aa439AfBAAD47F98D2` <a href="https://basescan.org/address/0x2E64cd7cff7a80D45d7762Aa439AfBAAD47F98D2" target="_blank" rel="noopener noreferrer" title="Open on BaseScan"><IconExternalLink /></a> |
-| **Shibarium**     | `0x0D7C60519D545E93F2e6359b7e7e852FD4c4E5e5` <a href="https://shibariumscan.io/address/0x0D7C60519D545E93F2e6359b7e7e852FD4c4E5e5" target="_blank" rel="noopener noreferrer" title="Open on ShibariumScan"><IconExternalLink /></a> |
+| **Ethereum**      | `0x71B9a8Cdc785Dac637056D371e762CDc0f0d9385` (`shi4gud.eth`) <a href="https://etherscan.io/address/0x71B9a8Cdc785Dac637056D371e762CDc0f0d9385" target="_blank" rel="noopener noreferrer" title="Open on Etherscan"><IconExternalLink /></a> |
+| **Sepolia (Testnet)** | `0x8cCaaA26014285dAF6cDeF0e6a51C15198E5936c` <a href="https://sepolia.etherscan.io/address/0x8cCaaA26014285dAF6cDeF0e6a51C15198E5936c" target="_blank" rel="noopener noreferrer" title="Open on Etherscan (Sepolia)"><IconExternalLink /></a> |
+| **Base**          | Coming Soon |
+| **Shibarium**     | Coming Soon |
 
 ## Official Burn Bank Nodes
 
@@ -71,7 +71,7 @@ You can read the full details of the contract's functionality in the [TokenPrice
 
 | Network           | TokenPrice Contract Address                     |
 | :---------------- | :---------------------------------------------- |
-| **Ethereum**      | `0xf86bFF1a3EC62175dE2c6395214323C566354315` <a href="https://etherscan.io/address/0xf86bFF1a3EC62175dE2c6395214323C566354315" target="_blank" rel="noopener noreferrer" title="Open on Etherscan"><IconExternalLink /></a> |
+| **Ethereum**      | `0xf86bFF1a3EC62175dE2c6395214323C566354315` (`oracle.shi4gud.eth`) <a href="https://etherscan.io/address/0xf86bFF1a3EC62175dE2c6395214323C566354315" target="_blank" rel="noopener noreferrer" title="Open on Etherscan"><IconExternalLink /></a> |
 | **Sepolia (Testnet)** | `0x869A7e03766341E5E55754647100f518068c8500` <a href="https://sepolia.etherscan.io/address/0x869A7e03766341E5E55754647100f518068c8500" target="_blank" rel="noopener noreferrer" title="Open on Sepolia Etherscan"><IconExternalLink /></a> |
 | **Base**          | `0x0D7C60519D545E93F2e6359b7e7e852FD4c4E5e5` <a href="https://basescan.org/address/0x0D7C60519D545E93F2e6359b7e7e852FD4c4E5e5" target="_blank" rel="noopener noreferrer" title="Open on BaseScan"><IconExternalLink /></a> |
 | **Shibarium**     | `0xCD5d2cde7fEddBFcAbdBeDbcc0342B060493fc1C` <a href="https://shibariumscan.io/address/0xCD5d2cde7fEddBFcAbdBeDbcc0342B060493fc1C" target="_blank" rel="noopener noreferrer" title="Open on ShibariumScan"><IconExternalLink /></a> |
@@ -87,6 +87,29 @@ Below is a list of the official ETH/USD price feed contracts used in the ecosyst
 | **Ethereum**      | `0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419` <a href="https://etherscan.io/address/0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419" target="_blank" rel="noopener noreferrer" title="Open on Etherscan"><IconExternalLink /></a>   |
 | **Sepolia (Testnet)** | `0x694AA1769357215DE4FAC081bf1f309aDC325306` <a href="https://sepolia.etherscan.io/address/0x694AA1769357215DE4FAC081bf1f309aDC325306" target="_blank" rel="noopener noreferrer" title="Open on Sepolia Etherscan"><IconExternalLink /></a>   |
 | **Base**          | `0x71041dddad3595F9CEd3DcCFBe3D1F4b0a16Bb70` <a href="https://basescan.org/address/0x71041dddad3595F9CEd3DcCFBe3D1F4b0a16Bb70" target="_blank" rel="noopener noreferrer" title="Open on BaseScan"><IconExternalLink /></a>   |
+
+## Official Timelock Contracts
+
+The `Ktv2OwnershipTimelock` contract provides a secure mechanism for temporarily freezing ownership of `Ktv2` (Burn Bank) contracts. This allows for decentralization while retaining the option for future administrative changes. Below are the addresses of the official timelock contracts deployed on each supported network.
+
+You can read the full details of the contract's functionality in the [Timelock Contract documentation](./../smart-contracts/timelock-contract.md).
+
+### Ethereum
+
+| Token  | Timelock Contract Address                       |
+| :----- | :---------------------------------------------- |
+| **SHI**    | `0x39E0Df70F9fbC2b7902f967Fd4bFb036476E9f14` (`timelockshi.shi4gud.eth`) <a href="https://etherscan.io/address/0x39E0Df70F9fbC2b7902f967Fd4bFb036476E9f14" target="_blank" rel="noopener noreferrer" title="Open on Etherscan"><IconExternalLink /></a>   |
+| **SHIB**   | `0xBc7277e8fa7eD2108f3fd05316533E70b866c9Cf` (`timelockshib.shi4gud.eth`) <a href="https://etherscan.io/address/0xBc7277e8fa7eD2108f3fd05316533E70b866c9Cf" target="_blank" rel="noopener noreferrer" title="Open on Etherscan"><IconExternalLink /></a>   |
+
+## Official Multisig Wallet
+
+The SHI4GUD team uses a multisig wallet as an intermediate step in the ownership transfer process before freezing contracts with the timelock. This provides enhanced security and governance through multi-signature approval requirements.
+
+### Ethereum
+
+| Multisig Address                       |
+| :------------------------------------- |
+| `0x6010a7042Aff201d89E407C14417c64DfF2f443F` (`BurnBankHQ.eth`) <a href="https://etherscan.io/address/0x6010a7042Aff201d89E407C14417c64DfF2f443F" target="_blank" rel="noopener noreferrer" title="Open on Etherscan"><IconExternalLink /></a>   |
 
 ## Official Charity Fund
 

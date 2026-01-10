@@ -8,7 +8,7 @@ The fee process is intrinsically linked to the `vote` and `reward` cycle. Here i
 
 ### 1. Fee Calculation
 
-Fees are not taken from the winner's reward. Instead, they are calculated and set aside from the contract's total ETH balance *before* the final reward is sent.
+Fees are calculated during each node's vote (via the `recordOCFee()` function) and are subtracted from the reward amount *before* the final reward is sent to the winner.
 
 -   **Trigger**: The primary fee calculation happens when a node successfully calls the `Rwd()` function on the smart contract to pay a winner. The contract's internal `recordOCFee()` function is also called during the `vote()` process.
 -   **The Formula**: The fee is a percentage of the contract's available balance at the moment of the transaction. The formula is:

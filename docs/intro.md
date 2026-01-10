@@ -14,7 +14,7 @@ This documentation provides a comprehensive architectural overview of the SHI4GU
 
 ## About The Project
 
-**SHI4GUD** is a multichain DeFi platform featuring a Burn Bank mechanism that combines staking with charitable donations and token burning. The core principle is simple: stake your tokens to become part of the ecosystem, then donate ETH to automatically burn tokens from the staking pool. This process creates deflationary pressure on the staked token while supporting good causes and rewarding a lucky staker from the pool.
+**SHI4GUD** is a multichain DeFi platform featuring a Burn Bank mechanism that combines staking with charitable donations and token burning. The core principle is simple: stake your tokens to become part of the ecosystem and/or donate ETH to automatically burn tokens from the staking pool. This process creates deflationary pressure on the staked token while supporting good causes and rewarding a lucky staker from the pool.
 
 The dApp integrates directly with the Charity Burn Mechanism (CBM) technology developed by the [Shina Inu (SHI)](https://shinatoken.com) team. The front-end is built with a modern tech stack including Vite, React, TypeScript, and wagmi for a fast and secure user experience. You can find the source code for the dApp on [GitHub](https://github.com/shi4gud).
 

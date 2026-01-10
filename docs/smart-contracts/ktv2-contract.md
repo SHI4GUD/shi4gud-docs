@@ -97,7 +97,7 @@ The owner of the contract has extensive control over its parameters.
 
 :::note
 
-It is important to note that these administrative functions are only callable if the contract ownership has not been renounced. The SHI4GUD team's policy is to renounce ownership of all deployed Burn Bank contracts once the initial parameters are correctly configured. This ensures that the contract's rules become immutable and cannot be changed. For more details on this process, see the ["Contract Ownership and Decentralization"](#contract-ownership-and-decentralization) section below.
+It is important to note that these administrative functions are only callable if the contract ownership has not been transferred to a timelock contract. The SHI4GUD team's policy is to transfer ownership of all deployed Burn Bank contracts to a multisig wallet first, and then to a `Ktv2OwnershipTimelock` contract once the initial parameters are correctly configured. This ensures that the contract's rules become immutable during the freeze period and cannot be changed until the timelock expires. For more details on this process, see the ["Contract Ownership and Decentralization"](#contract-ownership-and-decentralization) section below.
 
 :::
 
@@ -152,18 +152,33 @@ Parameters:
 
 ## Contract Ownership and Decentralization
 
-### Renouncing Ownership
+### Timelock-Based Ownership Freezing
 
-The `Ktv2` contract inherits from OpenZeppelin's widely-used `Ownable` contract, which grants the creator administrative control over its settings. This ownership model includes access to a critical function for decentralization: `renounceOwnership()`.
+The `Ktv2` contract inherits from OpenZeppelin's widely-used `Ownable` contract, which grants the creator administrative control over its settings. Rather than permanently renouncing ownership, the SHI4GUD team uses a timelock mechanism to temporarily freeze administrative control while retaining the option for future governance improvements.
 
-#### What is Renouncing Ownership?
+#### What is Ownership Timelocking?
 
-When the contract's owner calls the `renounceOwnership()` function, it permanently and irrevocably relinquishes all ownership privileges. The contract's owner is set to the zero address (`0x0...0`), meaning no one can ever claim ownership again.
+Ownership timelocking involves transferring the `Ktv2` contract's ownership to a `Ktv2OwnershipTimelock` contract. The timelock contract holds ownership for a specified duration (between 1 hour and 365 days), during which all administrative functions are locked and cannot be called. After the freeze period expires, the original owner can restore ownership if needed.
+
+Before the timelock process begins, the `Ktv2` contract ownership is first transferred to a multisig wallet for enhanced security and governance. The multisig address can be found in the [Official Deployments Addresses](./../official-deployments-addresses/README.md#official-multisig-wallet) page.
+
+#### The Timelock Process
+
+Once ownership has been transferred to the multisig, the following steps are performed:
+
+1.  **Registration**: The multisig registers with the timelock contract.
+2.  **Ownership Transfer**: The multisig transfers `Ktv2` ownership to the timelock contract address.
+3.  **Freeze Activation**: The registered owner activates the timelock for a specified duration.
+4.  **Restoration**: After the freeze expires, the original owner can restore ownership (or extend the freeze).
 
 #### Security Implications
 
--   **True Immutability**: Once ownership is renounced, no one—not even the original creator—can call any of the `onlyOwner` functions. This action permanently locks all administrative parameters. The donation destination, burn factors, reward system settings, and all other configurable rules become unchangeable forever.
+-   **Temporary Immutability**: During the freeze period, no one—not even the original creator—can call any of the `onlyOwner` functions. All administrative parameters are locked: the donation destination, burn factors, reward system settings, and all other configurable rules become unchangeable for the duration of the freeze.
 
--   **Ultimate Trust and Security**: Renouncing ownership is the most powerful way to signal that a contract is secure and its rules are immutable. It provides a verifiable, on-chain guarantee to the community that the contract cannot be manipulated, paused, or altered by a central party in the future. It transforms the contract into a truly autonomous and decentralized protocol that operates exactly as programmed, without the need to trust a human administrator.
+-   **Transparent Decentralization**: The freeze duration is transparent and verifiable on-chain, allowing the community to see exactly when (or if) ownership can be restored. This provides a verifiable guarantee that the contract cannot be manipulated during the freeze period.
 
--   **Irreversibility**: This action is a one-way street; it cannot be undone. A renounced contract will operate according to its locked parameters for as long as the Ethereum network exists, providing a stable and predictable system for all participants. 
+-   **Flexibility for Governance**: Unlike permanent renunciation, timelocking allows for future parameter adjustments or upgrades if needed, while still providing strong security guarantees during the freeze period. The original owner can also extend the freeze period to demonstrate longer-term commitment to decentralization.
+
+-   **Balance of Trust**: This approach balances the need for decentralization with the flexibility to adapt to future needs, making it suitable for protocols that want to demonstrate commitment to immutability while retaining governance options.
+
+For more information about how the timelock contract works, see the [Timelock Contract documentation](./timelock-contract.md). 
