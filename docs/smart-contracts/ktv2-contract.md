@@ -58,29 +58,38 @@ Here is a breakdown of the key variables and the step-by-step logic:
 
 -   **`tknAmtGvn`**: This represents the "Donation Power." It's the value of the incoming ETH donation, converted into its equivalent amount in the staked token using the live price from the oracle.
 -   **`maxBrn`**: This is the "Maximum Burnable Amount" for a single transaction. It acts as a dynamic cap to protect the staking pool. It's calculated as a percentage (`maxBrnPrc`) of the `totalStk`.
--   **`burnFactor`**: An administrative parameter that acts as a multiplier to scale the burn amount.
+-   **`burnFactor`**: An administrative parameter that acts as a multiplier to scale the burn amount. The default value is `20`. With `P_FCTR = 10`, this means that in Tier 1, a donation power of `tknAmtGvn` will result in a burn amount of `2 * tknAmtGvn` (i.e., `(tknAmtGvn * 20) / 10`).
 -   **`P_FCTR` & `P_DEN`**: These are precision constants (`10` and `1000` respectively) used to handle decimal calculations in Solidity.
 
 **The Four Tiers:**
 
-The contract compares the `tknAmtGvn` (Donation Power) to the `maxBrn` to determine which tier to use. Each subsequent tier provides more "leverage," burning more tokens relative to the donation value.
+The contract compares the `tknAmtGvn` (Donation Power) to the `maxBrn` to determine which tier to use. The tiered system is designed to reward smaller donations with proportionally higher burn rates, while smoothly transitioning to a cap for very large donations. With the default `burnFactor = 20` and `P_FCTR = 10`, the simplified formulas are:
 
--   **Tier 1 (Small Donations):**
-    If the donation power is small, the burn amount is a direct multiplication of the donation power and the `burnFactor`.
-    `burnAmt = (tknAmtGvn * burnFactor) / P_FCTR`
+-   **Tier 1 (Small Donations):** `tknAmtGvn < maxBrn / 4`
+    -   **Simplified formula:** `burnAmt = tknAmtGvn × 2`
+    -   **Effective multiplier:** `2x (constant)`
+    -   **Full formula:** `burnAmt = (tknAmtGvn * burnFactor) / P_FCTR`
+    -   Small donations receive the highest proportional burn rate, with a constant 2x multiplier throughout this tier.
 
--   **Tier 2 (Medium Donations):**
-    As donation power grows, the formula adds a "kicker" of 25% of the `maxBrn` on top of a scaled-down multiplier.
-    `burnAmt = ((tknAmtGvn * burnFactor) / (P_FCTR * 2)) + (maxBrn / 4)`
+-   **Tier 2 (Medium Donations):** `maxBrn / 4 ≤ tknAmtGvn < maxBrn / 2`
+    -   **Simplified formula:** `burnAmt = tknAmtGvn × 1 + maxBrn / 4`
+    -   **Effective multiplier:** `2x → 1.5x (decreases)`
+    -   **Full formula:** `burnAmt = ((tknAmtGvn * burnFactor) / (P_FCTR * 2)) + (maxBrn / 4)`
+    -   The multiplier portion scales to 1x, and a fixed "kicker" of 25% of `maxBrn` is added. The effective multiplier decreases from 2x at the start of the tier to 1.5x at the end.
 
--   **Tier 3 (Large Donations):**
-    For even larger donations, the kicker increases to 50% of `maxBrn`.
-    `burnAmt = ((tknAmtGvn * burnFactor) / (P_FCTR * 4)) + (maxBrn / 2)`
+-   **Tier 3 (Large Donations):** `maxBrn / 2 ≤ tknAmtGvn < maxBrn`
+    -   **Simplified formula:** `burnAmt = tknAmtGvn × 0.5 + maxBrn / 2`
+    -   **Effective multiplier:** `1.5x → 1.25x (decreases further)`
+    -   **Full formula:** `burnAmt = ((tknAmtGvn * burnFactor) / (P_FCTR * 4)) + (maxBrn / 2)`
+    -   The multiplier portion scales down to 0.5x, and the kicker increases to 50% of `maxBrn`. The effective multiplier continues to decrease from 1.5x to 1.25x.
 
--   **Tier 4 (Maximum Impact Donations):**
-    If the donation power is very large (approaching or exceeding `maxBrn`), the burn amount is simply capped at `maxBrn`. This ensures a single donation cannot burn more than the maximum allowed percentage of the pool.
+-   **Tier 4 (Maximum Impact Donations):** `tknAmtGvn ≥ maxBrn`
+    -   **Simplified formula:** `burnAmt = maxBrn` (capped)
+    -   **Effective multiplier:** `Drops sharply (e.g., <1x for very large donations)`
+    -   **Full formula:** `burnAmt = maxBrn`
+    -   Very large donations are capped at `maxBrn` to protect the staking pool. The effective multiplier drops sharply for donations exceeding the maximum burnable amount.
 
-This tiered system creates a powerful incentive structure, encouraging participants to make more significant donations to achieve the highest token-burning impact.
+This tiered system creates a powerful incentive structure where smaller donations achieve proportionally higher burn rates, while smoothly transitioning to a cap that protects the staking pool from excessive burns in a single transaction.
 
 ## Off-Chain Rewards & Voting System
 
