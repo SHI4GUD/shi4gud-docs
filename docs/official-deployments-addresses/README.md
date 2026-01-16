@@ -47,12 +47,14 @@ This section lists the authorized off-chain nodes that participate in the decent
 | Node Address        | Operator             | Status |
 | :------------------ | :------------------- | :----- |
 | `0xF25d4199ed3ca881BfaF3A0801c4028cFc47359e` <a href="https://etherscan.io/address/0xF25d4199ed3ca881BfaF3A0801c4028cFc47359e" target="_blank" rel="noopener noreferrer" title="Open on Etherscan"><IconExternalLink /></a> | `SHI4GUD Foundation` | Active |
+| `0x38D5d5aE0b4C7bF41D8f6b9fe754B58cf5Df45fd` <a href="https://etherscan.io/address/0x38D5d5aE0b4C7bF41D8f6b9fe754B58cf5Df45fd" target="_blank" rel="noopener noreferrer" title="Open on Etherscan"><IconExternalLink /></a> | `SHI4GUD Foundation` | Active |
 
 #### SHIB
 
 | Node Address        | Operator             | Status |
 | :------------------ | :------------------- | :----- |
 | `0xF25d4199ed3ca881BfaF3A0801c4028cFc47359e` <a href="https://etherscan.io/address/0xF25d4199ed3ca881BfaF3A0801c4028cFc47359e" target="_blank" rel="noopener noreferrer" title="Open on Etherscan"><IconExternalLink /></a> | `SHI4GUD Foundation` | Active |
+| `0x38D5d5aE0b4C7bF41D8f6b9fe754B58cf5Df45fd` <a href="https://etherscan.io/address/0x38D5d5aE0b4C7bF41D8f6b9fe754B58cf5Df45fd" target="_blank" rel="noopener noreferrer" title="Open on Etherscan"><IconExternalLink /></a> | `SHI4GUD Foundation` | Active |
 
 ### Sepolia (Testnet)
 
@@ -60,8 +62,7 @@ This section lists the authorized off-chain nodes that participate in the decent
 
 | Node Address        | Operator             | Status |
 | :------------------ | :------------------- | :----- |
-| `0xF25d4199ed3ca881BfaF3A0801c4028cFc47359e` <a href="https://sepolia.etherscan.io/address/0xF25d4199ed3ca881BfaF3A0801c4028cFc47359e" target="_blank" rel="noopener noreferrer" title="Open on Sepolia Etherscan"><IconExternalLink /></a> | `SHI4GUD Foundation` | Active |
-| `0x228b0D2887B3637f6bc1DCe0084134d5260d7822` <a href="https://sepolia.etherscan.io/address/0x228b0D2887B3637f6bc1DCe0084134d5260d7822" target="_blank" rel="noopener noreferrer" title="Open on Sepolia Etherscan"><IconExternalLink /></a> | `Shina Inu Team` | Active |
+| `0xF25d4199ed3ca881BfaF3A0801c4028cFc47359e` <a href="https://sepolia.etherscan.io/address/0xF25d4199ed3ca881BfaF3A0801c4028cFc47359e" target="_blank" rel="noopener noreferrer" title="Open on Sepolia Etherscan"><IconExternalLink /></a> | `SHI4GUD Foundation` | Inactive |
 
 ## Official TokenPrice Contracts
 
