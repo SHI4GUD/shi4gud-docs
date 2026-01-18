@@ -46,15 +46,17 @@ This section lists the authorized off-chain nodes that participate in the decent
 
 | Node Address        | Operator             | Status |
 | :------------------ | :------------------- | :----- |
-| `0xF25d4199ed3ca881BfaF3A0801c4028cFc47359e` <a href="https://etherscan.io/address/0xF25d4199ed3ca881BfaF3A0801c4028cFc47359e" target="_blank" rel="noopener noreferrer" title="Open on Etherscan"><IconExternalLink /></a> | `SHI4GUD Foundation` | Active |
-| `0x38D5d5aE0b4C7bF41D8f6b9fe754B58cf5Df45fd` <a href="https://etherscan.io/address/0x38D5d5aE0b4C7bF41D8f6b9fe754B58cf5Df45fd" target="_blank" rel="noopener noreferrer" title="Open on Etherscan"><IconExternalLink /></a> | `SHI4GUD Foundation` | Active |
+| `0xF25d4199ed3ca881BfaF3A0801c4028cFc47359e` <a href="https://etherscan.io/address/0xF25d4199ed3ca881BfaF3A0801c4028cFc47359e" target="_blank" rel="noopener noreferrer" title="Open on Etherscan"><IconExternalLink /></a> | `Monark` | Active |
+| `0x38D5d5aE0b4C7bF41D8f6b9fe754B58cf5Df45fd` <a href="https://etherscan.io/address/0x38D5d5aE0b4C7bF41D8f6b9fe754B58cf5Df45fd" target="_blank" rel="noopener noreferrer" title="Open on Etherscan"><IconExternalLink /></a> | `Ryz` | Active |
+| `0xEe7Bdabb91668C11D1Af0e7eBc5BC7D6317364dB` <a href="https://etherscan.io/address/0xEe7Bdabb91668C11D1Af0e7eBc5BC7D6317364dB" target="_blank" rel="noopener noreferrer" title="Open on Etherscan"><IconExternalLink /></a> | `Zync` | Active |
 
 #### SHIB
 
 | Node Address        | Operator             | Status |
 | :------------------ | :------------------- | :----- |
-| `0xF25d4199ed3ca881BfaF3A0801c4028cFc47359e` <a href="https://etherscan.io/address/0xF25d4199ed3ca881BfaF3A0801c4028cFc47359e" target="_blank" rel="noopener noreferrer" title="Open on Etherscan"><IconExternalLink /></a> | `SHI4GUD Foundation` | Active |
-| `0x38D5d5aE0b4C7bF41D8f6b9fe754B58cf5Df45fd` <a href="https://etherscan.io/address/0x38D5d5aE0b4C7bF41D8f6b9fe754B58cf5Df45fd" target="_blank" rel="noopener noreferrer" title="Open on Etherscan"><IconExternalLink /></a> | `SHI4GUD Foundation` | Active |
+| `0xF25d4199ed3ca881BfaF3A0801c4028cFc47359e` <a href="https://etherscan.io/address/0xF25d4199ed3ca881BfaF3A0801c4028cFc47359e" target="_blank" rel="noopener noreferrer" title="Open on Etherscan"><IconExternalLink /></a> | `Monark` | Active |
+| `0x38D5d5aE0b4C7bF41D8f6b9fe754B58cf5Df45fd` <a href="https://etherscan.io/address/0x38D5d5aE0b4C7bF41D8f6b9fe754B58cf5Df45fd" target="_blank" rel="noopener noreferrer" title="Open on Etherscan"><IconExternalLink /></a> | `Ryz` | Active |
+| `0xEe7Bdabb91668C11D1Af0e7eBc5BC7D6317364dB` <a href="https://etherscan.io/address/0xEe7Bdabb91668C11D1Af0e7eBc5BC7D6317364dB" target="_blank" rel="noopener noreferrer" title="Open on Etherscan"><IconExternalLink /></a> | `Zync` | Active |
 
 ### Sepolia (Testnet)
 
@@ -62,7 +64,7 @@ This section lists the authorized off-chain nodes that participate in the decent
 
 | Node Address        | Operator             | Status |
 | :------------------ | :------------------- | :----- |
-| `0xF25d4199ed3ca881BfaF3A0801c4028cFc47359e` <a href="https://sepolia.etherscan.io/address/0xF25d4199ed3ca881BfaF3A0801c4028cFc47359e" target="_blank" rel="noopener noreferrer" title="Open on Sepolia Etherscan"><IconExternalLink /></a> | `SHI4GUD Foundation` | Inactive |
+| `0xF25d4199ed3ca881BfaF3A0801c4028cFc47359e` <a href="https://sepolia.etherscan.io/address/0xF25d4199ed3ca881BfaF3A0801c4028cFc47359e" target="_blank" rel="noopener noreferrer" title="Open on Sepolia Etherscan"><IconExternalLink /></a> | `Monark` | Inactive |
 
 ## Official TokenPrice Contracts
 

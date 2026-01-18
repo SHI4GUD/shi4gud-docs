@@ -18,7 +18,7 @@ For a detailed explanation of the vote, reward, and winner selection process, pl
 
 ## Getting Started: Running a Node
 
-This guide provides all the necessary steps to set up and run your own `KTOC` node.
+This section provides a basic example for running a `KTOC` node locally on your machine. For production deployments on cloud infrastructure (including setup with PM2 for process management and running multiple nodes), please refer to the [Cloud Node Setup Guide](./cloud-setup.md).
 
 - **Node Repository**: [https://github.com/shi4gud/shi4gud-node](https://github.com/shi4gud/shi4gud-node)
 
@@ -26,6 +26,7 @@ This guide provides all the necessary steps to set up and run your own `KTOC` no
 
 -   Go (version 1.18 or later) installed and configured.
 -   Access to an Ethereum JSON-RPC endpoint (e.g., Infura, Alchemy, or a local `geth` node).
+-   **If you want to run a node for the SHI4GUD network and interact with official Burn Banks**: Your node address must be approved and added to the allowlist in the KTV2 contract. To learn how to apply for node approval, please refer to the [Node Application Process](./application.md) page.
 
 ### 1. Configuration (.env file)
 
@@ -47,7 +48,7 @@ KT_START_BLOCK=
 
 **Variable Definitions:**
 
--   `MY_PUBLIC_KEY`: The public Ethereum address of your node's wallet. This address must be registered as an "OC Rewarder" in the `Ktv2` contract.
+-   `MY_PUBLIC_KEY`: The public Ethereum address of your node's wallet. If you want to run a node for the SHI4GUD network and interact with official Burn Banks, this address must be approved and registered as an "OC Rewarder" in the `Ktv2` contract.
 -   `MY_PRIVATE_KEY`: The private key for `MY_PUBLIC_KEY`.
     -   **SECURITY WARNING**: Never expose this key or commit it to version control. The `.env` file should be listed in your `.gitignore`.
 -   `ETH_ENDPOINT`: The full URL of the Ethereum JSON-RPC endpoint your node will connect to.

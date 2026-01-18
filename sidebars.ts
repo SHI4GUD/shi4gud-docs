@@ -35,6 +35,7 @@ const sidebars: SidebarsConfig = {
       label: 'Off-Chain Nodes',
       items: [
         'node/ktoc',
+        'node/cloud-setup',
         'node/vote-and-reward',
         'node/fee',
         'node/application',
