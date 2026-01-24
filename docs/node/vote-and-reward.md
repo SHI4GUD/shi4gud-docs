@@ -30,7 +30,7 @@ The winner is chosen via a weighted, on-chain lottery where the randomness is so
 
 1.  **Calculating Probabilities**: Each user's probability of winning is a simple ratio: `User's Minimum Stake / Total Minimum Stake`.
 2.  **Sourcing Randomness**: The node waits for the *next block* to be mined immediately after the `endBlock`. It then fetches the hash of this future block. This block hash is an unknowable value at the time the epoch ends, making it a secure source of randomness.
-3.  **The Drawing**: The block hash is converted into a number between 0 and 1. The node then runs a lottery where each staker's probability range is stacked one after another. The user whose probability "slice" the random number falls into is declared the winner. If no one has staked, the rewards rollover to the next epoch.
+3.  **The Drawing**: The block hash is converted into a number between 0 and 1. The node then runs a lottery where each staker's probability range is stacked one after another. The user whose probability "slice" the random number falls into is declared the winner. If there are no eligible stakers, the rewards rollover to the next epoch.
 
 ### Step 4: Casting the On-Chain Vote
 
