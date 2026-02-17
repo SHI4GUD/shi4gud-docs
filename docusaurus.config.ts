@@ -92,6 +92,12 @@ const config: Config = {
           className: 'header-faq-link',
         },
         {
+          href: 'https://shi4gud.com/bank/',
+          label: 'Banks',
+          position: 'right',
+          className: 'header-banks-link',
+        },
+        {
           href: 'https://github.com/shi4gud',
           label: 'GitHub',
           position: 'right',
@@ -102,6 +108,12 @@ const config: Config = {
           label: 'Twitter',
           position: 'right',
           className: 'header-x-link',
+        },
+        {
+          href: 'https://t.me/newShinaTokenPortal',
+          label: 'Telegram',
+          position: 'right',
+          className: 'header-telegram-link',
         },
         {
           href: 'https://app.shi4gud.com',
@@ -168,6 +180,10 @@ const config: Config = {
             {
               label: 'FAQ',
               href: 'https://shi4gud.com/faq',
+            },
+            {
+              label: 'Banks',
+              href: 'https://shi4gud.com/bank/',
             },
             {
               label: 'GitHub',

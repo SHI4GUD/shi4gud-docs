@@ -407,9 +407,110 @@ pm2 delete all              # Remove all
 
 ---
 
+## Step 10: Updating the Node
+
+When a new version of the node software is released, use the update script below to pull the latest code, rebuild the binary, and restart your PM2 processes. You only need to set up the script once; after that, run it whenever you want to update.
+
+### One-Time Setup: Create the Update Script
+
+1. Go to your project directory:
+
+```bash
+cd /root/shi4gud-node
+# Or: cd ~/shi4gud-node if not using root
+```
+
+2. Create the update script:
+
+```bash
+nano update.sh
+```
+
+3. Paste the following script into the editor:
+
+**Tip:** In most terminals (e.g. Termius), use **Ctrl+Shift+V** to paste from your clipboard.
+
+```bash
+#!/bin/bash
+# Production update script for SHI4GUD node
+# Pull latest code, rebuild, restart PM2 instances
+
+set -e  # stop on any error
+
+# Explicit project directory
+PROJECT_DIR="/root/shi4gud-node"
+cd "$PROJECT_DIR"
+
+echo "🔄 Pulling latest code from GitHub..."
+git pull origin master
+
+echo "🛠 Building updated binary..."
+chmod +x build.sh
+./build.sh
+
+echo "♻️ Restarting PM2 processes..."
+pm2 restart all
+
+echo "💾 Saving PM2 process list..."
+pm2 save
+
+echo "✅ Update complete!"
+```
+
+4. Save and exit nano: **Ctrl+X**, then **Y**, then **Enter**.
+
+5. Make the script executable (stay in `/root/shi4gud-node`):
+
+```bash
+chmod +x update.sh
+# Makes the update script executable
+```
+
+### Running an Update
+
+Whenever you want to update to the latest node version:
+
+```bash
+cd /root/shi4gud-node
+# Ensure you're in the project directory
+
+./update.sh
+# Run the update script
+```
+
+The script will pull the latest code, rebuild the binary, restart all PM2 processes, and save the process list. Allow a few minutes for the build and restart to complete.
+
+### What Success Looks Like
+
+When the update completes successfully, you should see output similar to:
+
+- **Build:** `[SUCCESS] Build process completed successfully` and a message that the executable was built at `/root/shi4gud-node/ktoc`
+- **PM2 restart:** Confirmations (✓) for each node (e.g. `shi-node`, `shib-node` or `node-shi`, `node-shib` depending on your config)
+- **Status table:** Both nodes listed with `status: online` and a short `uptime` (e.g. `0s` right after restart)
+- **Save:** `Successfully saved in /root/.pm2/dump.pm2`
+- **Done:** `✅ Update complete!`
+
+If your output matches this, the update succeeded.
+
+### After Updating: Check Logs
+
+Always verify that the nodes are running without errors:
+
+```bash
+pm2 logs
+# View live logs from all nodes (Ctrl+C to exit)
+
+pm2 logs --lines 50
+# Or view the last 50 lines
+```
+
+If you see no errors and the nodes are processing as expected, the update is complete. For future updates, run `./update.sh` from `/root/shi4gud-node` whenever you want to pull and deploy the latest code.
+
+---
+
 ## Additional Notes
 
 - **Security**: Always keep your private keys secure. Never commit `.env` files to version control.
 - **Monitoring**: Regularly check your node logs to ensure they're running correctly.
-- **Updates**: When updating the node software, stop the PM2 processes, pull the latest code, rebuild, and restart.
+- **Updates**: Use the update script described in [Step 10: Updating the Node](#step-10-updating-the-node). After one-time setup, run `./update.sh` from the project directory whenever you want to update.
 - **Multiple Nodes**: You can run multiple nodes on the same server by creating additional `.env` files and adding entries to `ecosystem.config.js`.
