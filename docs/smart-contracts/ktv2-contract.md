@@ -11,8 +11,8 @@ This contract, referred to as the "Burn Bank," is the core of the give-to-burn e
 ## Core Concepts
 
 -   **Staking**: Users deposit the project's specific ERC-20 token into the contract to provide liquidity for the burn mechanism. They can withdraw their tokens at any time.
--   **Donating**: Anyone can send ETH to the contract's `give()` function. A portion of this ETH is sent to the Gud Fund managed by Endaoment. For more info, see the [Charitable Donations section](../charity/README.md).
--   **Burning**: In response to a donation, the contract uses the remaining ETH value to calculate an amount of staked tokens to burn. These tokens are transferred to a dead address, permanently removing them from circulation.
+-   **Donating**: Anyone can donate ETH by calling the contract's `give()` function. A portion of this ETH is sent to the Gud Fund managed by Endaoment. For more info, see the [Charitable Donations section](../charity/README.md).
+-   **Burning**: In response to a donation, the contract uses the ETH value to calculate an amount of staked tokens to burn. These tokens are transferred to a dead address, permanently removing them from circulation.
 
 ## Public User Functions
 
@@ -43,7 +43,7 @@ When a user sends ETH to this function, the following sequence occurs:
     -   If `_v2` is `false` (Uniswap V3), it calls `tp.price(pool)`.
     -   If `_v2` is `true` (Uniswap V2), it calls `tp.priceV2(pool)`.
 3.  **Donation Value in Tokens**: It uses this price to convert the value of the incoming ETH into an equivalent amount of the staked token (`tknAmtGvn`).
-4.  **Burn Calculation**: The core logic resides here. The contract calculates the amount of tokens to burn (`burnAmt`) using a tiered formula. This formula compares the donation value (`tknAmtGvn`) against the maximum potential burn (`maxBrn`), which is a percentage of the total tokens staked. The formula is designed to reward larger donations with progressively higher burn rates.
+4.  **Burn Calculation**: The core logic resides here. The contract calculates the amount of tokens to burn (`burnAmt`) using a tiered formula. This formula compares the donation value (`tknAmtGvn`) against the maximum potential burn (`maxBrn`), which is a percentage of the total tokens staked.
 5.  **Execution**:
     -   The calculated `burnAmt` of the token is transferred from the staking pool to the `burnDest` address.
     -   The `giveAmt` of ETH calculated in step 1 is sent to the `dest` address.
