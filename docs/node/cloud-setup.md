@@ -267,6 +267,37 @@ ETH_ENDPOINT=https://eth-mainnet.g.alchemy.com/v2/ADD_YOUR_API_KEY
 KT_START_BLOCK=24179342
 ```
 
+#### Minimum required fields
+
+For a basic setup where your node is only used for **rewards, querying, and voting** (and not to deploy new burn bank contracts), you only need to make sure the following values are set correctly; the other address fields can stay empty if you do not need to override them explicitly:
+
+```env
+MY_PUBLIC_KEY=--ADD YOUR WALLET PUBLIC KEY--
+MY_PRIVATE_KEY=--ADD YOUR WALLET PRIVATE KEY--
+DEAD_ADDR=
+TARGET_ADDR=
+FACTORY_ADDR=0x71B9a8Cdc785Dac637056D371e762CDc0f0d9385
+POOL_ADDR=
+TKN_ADDR=
+TKN_PRC_ADDR=
+KT_ADDR=--ADD THE BURN BANK CONTRACT ADDRESS--
+QUERY_DELAY=200
+ETH_ENDPOINT=https://eth-mainnet.g.alchemy.com/v2/ADD_YOUR_API_KEY
+KT_START_BLOCK=--ADD THE BURN BANK CONTRACT CREATION BLOCK--
+```
+
+The critical values for this use case are your wallet keys, `FACTORY_ADDR`, `KT_ADDR`, `KT_START_BLOCK`, `ETH_ENDPOINT`, and a suitable `QUERY_DELAY`. The other parameters (`DEAD_ADDR`, `TARGET_ADDR`, `POOL_ADDR`, `TKN_ADDR`, `TKN_PRC_ADDR`) are only needed if you plan to **deploy a new burn bank contract from your node**; if you are not deploying a new bank, you can leave them empty. If you are using an Alchemy **Pay As You Go** key, especially when running multiple nodes, consider increasing `QUERY_DELAY` to **500** or even **1000** to reduce the risk of timeouts and rate-limit issues.
+
+### Finding KT_START_BLOCK
+
+`KT_START_BLOCK` must be the **block number at which the bank contract (KT) was deployed**. To get it:
+
+1. Go to [Etherscan](https://etherscan.io) and open the page for your **KT contract** (the address you use for `KT_ADDR` in that env file).
+2. Find the **contract creation** transaction — e.g. use the "Internal Transactions" tab and look for the creation transaction.
+3. Open that transaction and read its **block number**. Use that block number as `KT_START_BLOCK` in your `.env` file.
+
+Each bank has its own deployment block, so each node (e.g. SHI, SHIB, or another bank) must have the correct `KT_START_BLOCK` for that bank’s KT contract.
+
 ### Create PM2 Ecosystem Config
 
 ```bash
@@ -299,6 +330,8 @@ module.exports = {
   ]
 };
 ```
+
+**Tuning `chunkSize` and `waitDuration`:** When you run multiple banks/nodes on the same Alchemy key, using a larger `-chunkSize` (for example `10000`) together with a longer `-waitDuration` (for example `15m`) reduces the number of requests per minute and helps prevent timeouts or rate-limit errors. If you only run a single node (or very few nodes), you can keep smaller values (like `500` and `5m`) for more frequent, smaller batches.
 
 **Final Directory Structure:**
 ```
@@ -508,9 +541,176 @@ If you see no errors and the nodes are processing as expected, the update is com
 
 ---
 
+## Voting for Nodes (Add / Remove / Reset)
+
+You can vote to add or remove nodes from the network. Run all commands from your **shi4gud-node** folder (e.g. `/root/shi4gud-node`).
+
+### Vote to add a node
+
+Run this command as-is, including the parentheses. Replace the two placeholders:
+
+```bash
+( set -a && source .env.1 && set +a && ./ktoc -voteToAddOC 0x000000000000000000000000000000000000dEaD )
+```
+
+1. **Env file:** Use the `.env` file for the **bank you want to vote from** (e.g. `.env.1`, `.env.2` — whichever corresponds to that node in your setup, as in [Step 7: Configuration](#step-7-configuration)).
+2. **Address:** Replace `0x000000000000000000000000000000000000dEaD` with the node address you want to vote in.
+
+### Vote to remove a node
+
+Same command, but use **`voteToRemoveOC`** instead of `voteToAddOC`:
+
+```bash
+( set -a && source .env.1 && set +a && ./ktoc -voteToRemoveOC 0xADDRESS_TO_VOTE_OUT )
+```
+
+Use the env file for the bank you're voting from, and replace `0xADDRESS_TO_VOTE_OUT` with the node address you want to vote out.
+
+### Reset a vote
+
+To reset your vote for a specific address, use **`resetVoteToAddOC`** (to undo an add vote) or **`resetVoteToRemoveOC`** (to undo a remove vote):
+
+- **Reset an “add” vote:** use **`resetVoteToAddOC`** instead of `voteToAddOC`.
+- **Reset a “remove” vote:** use **`resetVoteToRemoveOC`** instead of `voteToRemoveOC`.
+
+```bash
+( set -a && source .env.1 && set +a && ./ktoc -resetVoteToAddOC 0xADDRESS_TO_RESET )
+# Or: -resetVoteToRemoveOC for a remove vote
+```
+
+Replace the address and the env file with the ones that apply.
+
+---
+
+## Running Multiple Nodes on the Same Server
+
+You can run more than two nodes on the same server. Each node needs its own `.env` file and one entry in `ecosystem.config.js`. The steps below add a **third** node (for example a PEPE bank); repeat the same pattern for more.
+
+### 1. Create a new environment file
+
+Use a new number for each node (e.g. `.env.3` for a PEPE node):
+
+```bash
+cd /root/shi4gud-node
+# Or: cd ~/shi4gud-node if not using root
+
+nano .env.3
+```
+
+Add the same variables as in [Step 7: Configuration](#step-7-configuration): your wallet keys, the contract addresses and endpoints for **that bank**, and the correct `KT_START_BLOCK` for that token (see [Finding KT_START_BLOCK](#finding-kt_start_block) in Step 7). In practice, if you are only using the node for rewards/queries/voting (and **not** to deploy a new burn bank), you only need to fill out `MY_PUBLIC_KEY`, `MY_PRIVATE_KEY`, `FACTORY_ADDR`, `KT_ADDR`, `QUERY_DELAY`, `ETH_ENDPOINT`, and `KT_START_BLOCK` for the node to work; the other address fields (`DEAD_ADDR`, `TARGET_ADDR`, `POOL_ADDR`, `TKN_ADDR`, `TKN_PRC_ADDR`) are only required if you plan to deploy a new burn bank contract from this node and can otherwise be left empty. Use the same structure as `.env.1` (SHI) or `.env.2` (SHIB), but with the addresses and block number that match the bank you are adding.
+
+For example, for a **PEPE** node (`.env.3`) with only the required parts filled in:
+
+```env
+MY_PUBLIC_KEY=--ADD YOUR WALLET PUBLIC KEY--
+MY_PRIVATE_KEY=--ADD YOUR WALLET PRIVATE KEY--
+DEAD_ADDR=
+TARGET_ADDR=
+FACTORY_ADDR=0x71B9a8Cdc785Dac637056D371e762CDc0f0d9385
+POOL_ADDR=
+TKN_ADDR=
+TKN_PRC_ADDR=
+KT_ADDR=--ADD_PEPE_KT_CONTRACT_ADDRESS--
+QUERY_DELAY=500
+ETH_ENDPOINT=https://eth-mainnet.g.alchemy.com/v2/ADD_YOUR_API_KEY
+KT_START_BLOCK=--ADD_PEPE_KT_START_BLOCK--
+```
+
+Earlier in this guide we used `QUERY_DELAY=200` as a simple baseline. When you run **multiple banks on the same Alchemy key**, we recommend increasing `QUERY_DELAY` to **500–1000** (as shown above) to lower the request rate and avoid timeouts or rate-limits. If you already have `.env.1` and `.env.2` with `QUERY_DELAY=200`, consider changing them to **500** or **1000** as well so all nodes share the same, safer rate.
+
+Save and exit: **Ctrl+X**, then **Y**, then **Enter**.
+
+### 2. Add the node to the PM2 config
+
+Edit the ecosystem file:
+
+```bash
+nano ecosystem.config.js
+```
+
+Add a new object to the `apps` array (same shape as the existing `node-shi` and `node-shib` entries). Use a unique **name** and the new env file in **args** (here we name it `node-pepe` as an example):
+
+```javascript
+{
+  name: 'node-pepe',
+  script: './run.sh',
+  args: '.env.3 -run -chunkSize 500 -waitDuration 5m',
+  cwd: '/root/shi4gud-node',
+  autorestart: true,
+  max_restarts: 10,
+  restart_delay: 5000
+}
+```
+
+These values (`chunkSize 500`, `waitDuration 5m`) match the simple defaults shown earlier in the guide. If you are running **multiple banks/nodes** on the same Alchemy key, we recommend switching to the larger values used in the full example below (`chunkSize 10000`, `waitDuration 15m`) to reduce the number of requests per minute and minimize timeouts.
+
+So the full `module.exports` might look like:
+
+```javascript
+module.exports = {
+  apps: [
+    {
+      name: 'node-shi',
+      script: './run.sh',
+      args: '.env.1 -run -chunkSize 10000 -waitDuration 15m',
+      cwd: '/root/shi4gud-node',
+      autorestart: true,
+      max_restarts: 10,
+      restart_delay: 5000
+    },
+    {
+      name: 'node-shib',
+      script: './run.sh',
+      args: '.env.2 -run -chunkSize 10000 -waitDuration 15m',
+      cwd: '/root/shi4gud-node',
+      autorestart: true,
+      max_restarts: 10,
+      restart_delay: 5000
+    },
+    {
+      name: 'node-pepe',
+      script: './run.sh',
+      args: '.env.3 -run -chunkSize 10000 -waitDuration 15m',
+      cwd: '/root/shi4gud-node',
+      autorestart: true,
+      max_restarts: 10,
+      restart_delay: 5000
+    }
+  ]
+};
+```
+
+Save and exit.
+
+### 3. Hard restart and save
+
+Because you changed the config (new node or updated `args` like `chunkSize` / `waitDuration`), do a **hard restart** so all nodes run with the new settings. From the project directory:
+
+```bash
+cd /root/shi4gud-node
+
+pm2 delete all
+# Removes all current PM2 processes
+
+pm2 save --force
+# Writes the empty process list so the next start is clean
+
+pm2 start ecosystem.config.js
+# Starts all apps from the config (e.g. node-shi, node-shib, node-pepe)
+
+pm2 save
+# Saves the new process list for reboot / pm2 resurrect
+```
+
+Then run `pm2 list` to confirm all nodes (e.g. node-shi, node-shib, node-pepe) are online.
+
+The same management commands apply: `pm2 logs node-pepe`, `pm2 restart node-pepe`, etc. When you run `./update.sh`, it rebuilds the binary and restarts **all** nodes defined in `ecosystem.config.js`, including the new one.
+
+---
+
 ## Additional Notes
 
 - **Security**: Always keep your private keys secure. Never commit `.env` files to version control.
 - **Monitoring**: Regularly check your node logs to ensure they're running correctly.
 - **Updates**: Use the update script described in [Step 10: Updating the Node](#step-10-updating-the-node). After one-time setup, run `./update.sh` from the project directory whenever you want to update.
-- **Multiple Nodes**: You can run multiple nodes on the same server by creating additional `.env` files and adding entries to `ecosystem.config.js`.
+- **Multiple Nodes**: See [Running Multiple Nodes on the Same Server](#running-multiple-nodes-on-the-same-server) for adding more than two nodes.

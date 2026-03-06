@@ -16,6 +16,9 @@ You can read the full details of the contract's functionality in the [Ktv2 Contr
 | :----- | :---------------------------------------------- |
 | **SHI**    | `0xB1511DfE756342CA14a858B4896983095fEc1B51` (`shi.shi4gud.eth`) <a href="https://etherscan.io/address/0xB1511DfE756342CA14a858B4896983095fEc1B51" target="_blank" rel="noopener noreferrer" title="Open on Etherscan"><IconExternalLink /></a>   |
 | **SHIB**   | `0xE9cAFc8c14C44592aB976F5450D0d40f97668ffc` (`shib.shi4gud.eth`) <a href="https://etherscan.io/address/0xE9cAFc8c14C44592aB976F5450D0d40f97668ffc" target="_blank" rel="noopener noreferrer" title="Open on Etherscan"><IconExternalLink /></a>   |
+| **PEPE**   | `0x51b2FB972806BA240b7235d011A0969C5C53911A` (`pepe.shi4gud.eth`) <a href="https://etherscan.io/address/0x51b2FB972806BA240b7235d011A0969C5C53911A" target="_blank" rel="noopener noreferrer" title="Open on Etherscan"><IconExternalLink /></a>   |
+| **FLOKI**  | `0x34A7c42507870839232Becd8903FdE86A57011c6` (`floki.shi4gud.eth`) <a href="https://etherscan.io/address/0x34A7c42507870839232Becd8903FdE86A57011c6" target="_blank" rel="noopener noreferrer" title="Open on Etherscan"><IconExternalLink /></a>   |
+| **BOBO**   | `0xDf1F78Ab786786e5F9D3FbD9841982dA43cDa159` (`bobo.shi4gud.eth`) <a href="https://etherscan.io/address/0xDf1F78Ab786786e5F9D3FbD9841982dA43cDa159" target="_blank" rel="noopener noreferrer" title="Open on Etherscan"><IconExternalLink /></a>   |
 
 ### Sepolia (Testnet)
 
@@ -49,6 +52,7 @@ This section lists the authorized off-chain nodes that participate in the decent
 | `0xF25d4199ed3ca881BfaF3A0801c4028cFc47359e` <a href="https://etherscan.io/address/0xF25d4199ed3ca881BfaF3A0801c4028cFc47359e" target="_blank" rel="noopener noreferrer" title="Open on Etherscan"><IconExternalLink /></a> | `Monark` | Active |
 | `0x38D5d5aE0b4C7bF41D8f6b9fe754B58cf5Df45fd` <a href="https://etherscan.io/address/0x38D5d5aE0b4C7bF41D8f6b9fe754B58cf5Df45fd" target="_blank" rel="noopener noreferrer" title="Open on Etherscan"><IconExternalLink /></a> | `Ryz` | Active |
 | `0xEe7Bdabb91668C11D1Af0e7eBc5BC7D6317364dB` <a href="https://etherscan.io/address/0xEe7Bdabb91668C11D1Af0e7eBc5BC7D6317364dB" target="_blank" rel="noopener noreferrer" title="Open on Etherscan"><IconExternalLink /></a> | `Zync` | Active |
+| `0xE2aea04d5FEBe252c41316c75dFf4421fB12cC1f` <a href="https://etherscan.io/address/0xE2aea04d5FEBe252c41316c75dFf4421fB12cC1f" target="_blank" rel="noopener noreferrer" title="Open on Etherscan"><IconExternalLink /></a> | `Shannon` | Active |
 
 #### SHIB
 
@@ -57,6 +61,25 @@ This section lists the authorized off-chain nodes that participate in the decent
 | `0xF25d4199ed3ca881BfaF3A0801c4028cFc47359e` <a href="https://etherscan.io/address/0xF25d4199ed3ca881BfaF3A0801c4028cFc47359e" target="_blank" rel="noopener noreferrer" title="Open on Etherscan"><IconExternalLink /></a> | `Monark` | Active |
 | `0x38D5d5aE0b4C7bF41D8f6b9fe754B58cf5Df45fd` <a href="https://etherscan.io/address/0x38D5d5aE0b4C7bF41D8f6b9fe754B58cf5Df45fd" target="_blank" rel="noopener noreferrer" title="Open on Etherscan"><IconExternalLink /></a> | `Ryz` | Active |
 | `0xEe7Bdabb91668C11D1Af0e7eBc5BC7D6317364dB` <a href="https://etherscan.io/address/0xEe7Bdabb91668C11D1Af0e7eBc5BC7D6317364dB" target="_blank" rel="noopener noreferrer" title="Open on Etherscan"><IconExternalLink /></a> | `Zync` | Active |
+| `0xE2aea04d5FEBe252c41316c75dFf4421fB12cC1f` <a href="https://etherscan.io/address/0xE2aea04d5FEBe252c41316c75dFf4421fB12cC1f" target="_blank" rel="noopener noreferrer" title="Open on Etherscan"><IconExternalLink /></a> | `Shannon` | Active |
+
+#### PEPE
+
+| Node Address        | Operator             | Status |
+| :------------------ | :------------------- | :----- |
+| `0xF25d4199ed3ca881BfaF3A0801c4028cFc47359e` <a href="https://etherscan.io/address/0xF25d4199ed3ca881BfaF3A0801c4028cFc47359e" target="_blank" rel="noopener noreferrer" title="Open on Etherscan"><IconExternalLink /></a> | `Monark` | Active |
+
+#### FLOKI
+
+| Node Address        | Operator             | Status |
+| :------------------ | :------------------- | :----- |
+| `0xF25d4199ed3ca881BfaF3A0801c4028cFc47359e` <a href="https://etherscan.io/address/0xF25d4199ed3ca881BfaF3A0801c4028cFc47359e" target="_blank" rel="noopener noreferrer" title="Open on Etherscan"><IconExternalLink /></a> | `Monark` | Active |
+
+#### BOBO
+
+| Node Address        | Operator             | Status |
+| :------------------ | :------------------- | :----- |
+| `0xF25d4199ed3ca881BfaF3A0801c4028cFc47359e` <a href="https://etherscan.io/address/0xF25d4199ed3ca881BfaF3A0801c4028cFc47359e" target="_blank" rel="noopener noreferrer" title="Open on Etherscan"><IconExternalLink /></a> | `Monark` | Active |
 
 ### Sepolia (Testnet)
 
