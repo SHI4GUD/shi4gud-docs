@@ -36,7 +36,7 @@ You can read the full details of the contract's functionality in the [Ktv2Factor
 | :---------------- | :---------------------------------------------- |
 | **Ethereum**      | `0x71B9a8Cdc785Dac637056D371e762CDc0f0d9385` (`shi4gud.eth`) <a href="https://etherscan.io/address/0x71B9a8Cdc785Dac637056D371e762CDc0f0d9385" target="_blank" rel="noopener noreferrer" title="Open on Etherscan"><IconExternalLink /></a> |
 | **Sepolia (Testnet)** | `0x8cCaaA26014285dAF6cDeF0e6a51C15198E5936c` <a href="https://sepolia.etherscan.io/address/0x8cCaaA26014285dAF6cDeF0e6a51C15198E5936c" target="_blank" rel="noopener noreferrer" title="Open on Etherscan (Sepolia)"><IconExternalLink /></a> |
-| **Base**          | Coming Soon |
+| **Base**          | `0xE9035664b357468e2f64ac34f28470F71931F2Cd` <a href="https://basescan.org/address/0xE9035664b357468e2f64ac34f28470F71931F2Cd" target="_blank" rel="noopener noreferrer" title="Open on BaseScan"><IconExternalLink /></a> |
 | **Shibarium**     | Coming Soon |
 
 ## Official Burn Bank Nodes
