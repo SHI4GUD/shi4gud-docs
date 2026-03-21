@@ -53,6 +53,7 @@ This section lists the authorized off-chain nodes that participate in the decent
 | `0x38D5d5aE0b4C7bF41D8f6b9fe754B58cf5Df45fd` <a href="https://etherscan.io/address/0x38D5d5aE0b4C7bF41D8f6b9fe754B58cf5Df45fd" target="_blank" rel="noopener noreferrer" title="Open on Etherscan"><IconExternalLink /></a> | `Ryz` | Active |
 | `0xEe7Bdabb91668C11D1Af0e7eBc5BC7D6317364dB` <a href="https://etherscan.io/address/0xEe7Bdabb91668C11D1Af0e7eBc5BC7D6317364dB" target="_blank" rel="noopener noreferrer" title="Open on Etherscan"><IconExternalLink /></a> | `Zync` | Active |
 | `0xE2aea04d5FEBe252c41316c75dFf4421fB12cC1f` <a href="https://etherscan.io/address/0xE2aea04d5FEBe252c41316c75dFf4421fB12cC1f" target="_blank" rel="noopener noreferrer" title="Open on Etherscan"><IconExternalLink /></a> | `Shannon` | Active |
+| `0x306586b36A81A5805a91AD35A16E1EE9597bFAB4` <a href="https://etherscan.io/address/0x306586b36A81A5805a91AD35A16E1EE9597bFAB4" target="_blank" rel="noopener noreferrer" title="Open on Etherscan"><IconExternalLink /></a> | `The Dark Shib` | Active |
 
 #### SHIB
 
@@ -62,24 +63,34 @@ This section lists the authorized off-chain nodes that participate in the decent
 | `0x38D5d5aE0b4C7bF41D8f6b9fe754B58cf5Df45fd` <a href="https://etherscan.io/address/0x38D5d5aE0b4C7bF41D8f6b9fe754B58cf5Df45fd" target="_blank" rel="noopener noreferrer" title="Open on Etherscan"><IconExternalLink /></a> | `Ryz` | Active |
 | `0xEe7Bdabb91668C11D1Af0e7eBc5BC7D6317364dB` <a href="https://etherscan.io/address/0xEe7Bdabb91668C11D1Af0e7eBc5BC7D6317364dB" target="_blank" rel="noopener noreferrer" title="Open on Etherscan"><IconExternalLink /></a> | `Zync` | Active |
 | `0xE2aea04d5FEBe252c41316c75dFf4421fB12cC1f` <a href="https://etherscan.io/address/0xE2aea04d5FEBe252c41316c75dFf4421fB12cC1f" target="_blank" rel="noopener noreferrer" title="Open on Etherscan"><IconExternalLink /></a> | `Shannon` | Active |
+| `0x306586b36A81A5805a91AD35A16E1EE9597bFAB4` <a href="https://etherscan.io/address/0x306586b36A81A5805a91AD35A16E1EE9597bFAB4" target="_blank" rel="noopener noreferrer" title="Open on Etherscan"><IconExternalLink /></a> | `The Dark Shib` | Active |
 
 #### PEPE
 
 | Node Address        | Operator             | Status |
 | :------------------ | :------------------- | :----- |
 | `0xF25d4199ed3ca881BfaF3A0801c4028cFc47359e` <a href="https://etherscan.io/address/0xF25d4199ed3ca881BfaF3A0801c4028cFc47359e" target="_blank" rel="noopener noreferrer" title="Open on Etherscan"><IconExternalLink /></a> | `Monark` | Active |
+| `0x38D5d5aE0b4C7bF41D8f6b9fe754B58cf5Df45fd` <a href="https://etherscan.io/address/0x38D5d5aE0b4C7bF41D8f6b9fe754B58cf5Df45fd" target="_blank" rel="noopener noreferrer" title="Open on Etherscan"><IconExternalLink /></a> | `Ryz` | Active |
+| `0xE2aea04d5FEBe252c41316c75dFf4421fB12cC1f` <a href="https://etherscan.io/address/0xE2aea04d5FEBe252c41316c75dFf4421fB12cC1f" target="_blank" rel="noopener noreferrer" title="Open on Etherscan"><IconExternalLink /></a> | `Shannon` | Active |
+| `0x306586b36A81A5805a91AD35A16E1EE9597bFAB4` <a href="https://etherscan.io/address/0x306586b36A81A5805a91AD35A16E1EE9597bFAB4" target="_blank" rel="noopener noreferrer" title="Open on Etherscan"><IconExternalLink /></a> | `The Dark Shib` | Active |
 
 #### FLOKI
 
 | Node Address        | Operator             | Status |
 | :------------------ | :------------------- | :----- |
 | `0xF25d4199ed3ca881BfaF3A0801c4028cFc47359e` <a href="https://etherscan.io/address/0xF25d4199ed3ca881BfaF3A0801c4028cFc47359e" target="_blank" rel="noopener noreferrer" title="Open on Etherscan"><IconExternalLink /></a> | `Monark` | Active |
+| `0x38D5d5aE0b4C7bF41D8f6b9fe754B58cf5Df45fd` <a href="https://etherscan.io/address/0x38D5d5aE0b4C7bF41D8f6b9fe754B58cf5Df45fd" target="_blank" rel="noopener noreferrer" title="Open on Etherscan"><IconExternalLink /></a> | `Ryz` | Active |
+| `0xE2aea04d5FEBe252c41316c75dFf4421fB12cC1f` <a href="https://etherscan.io/address/0xE2aea04d5FEBe252c41316c75dFf4421fB12cC1f" target="_blank" rel="noopener noreferrer" title="Open on Etherscan"><IconExternalLink /></a> | `Shannon` | Active |
+| `0x306586b36A81A5805a91AD35A16E1EE9597bFAB4` <a href="https://etherscan.io/address/0x306586b36A81A5805a91AD35A16E1EE9597bFAB4" target="_blank" rel="noopener noreferrer" title="Open on Etherscan"><IconExternalLink /></a> | `The Dark Shib` | Active |
 
 #### BOBO
 
 | Node Address        | Operator             | Status |
 | :------------------ | :------------------- | :----- |
 | `0xF25d4199ed3ca881BfaF3A0801c4028cFc47359e` <a href="https://etherscan.io/address/0xF25d4199ed3ca881BfaF3A0801c4028cFc47359e" target="_blank" rel="noopener noreferrer" title="Open on Etherscan"><IconExternalLink /></a> | `Monark` | Active |
+| `0x38D5d5aE0b4C7bF41D8f6b9fe754B58cf5Df45fd` <a href="https://etherscan.io/address/0x38D5d5aE0b4C7bF41D8f6b9fe754B58cf5Df45fd" target="_blank" rel="noopener noreferrer" title="Open on Etherscan"><IconExternalLink /></a> | `Ryz` | Active |
+| `0xE2aea04d5FEBe252c41316c75dFf4421fB12cC1f` <a href="https://etherscan.io/address/0xE2aea04d5FEBe252c41316c75dFf4421fB12cC1f" target="_blank" rel="noopener noreferrer" title="Open on Etherscan"><IconExternalLink /></a> | `Shannon` | Active |
+| `0x306586b36A81A5805a91AD35A16E1EE9597bFAB4` <a href="https://etherscan.io/address/0x306586b36A81A5805a91AD35A16E1EE9597bFAB4" target="_blank" rel="noopener noreferrer" title="Open on Etherscan"><IconExternalLink /></a> | `The Dark Shib` | Active |
 
 ### Sepolia (Testnet)
 
