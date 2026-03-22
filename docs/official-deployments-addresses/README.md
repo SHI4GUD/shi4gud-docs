@@ -137,6 +137,9 @@ You can read the full details of the contract's functionality in the [Timelock C
 | :----- | :---------------------------------------------- |
 | **SHI**    | `0x39E0Df70F9fbC2b7902f967Fd4bFb036476E9f14` (`timelockshi.shi4gud.eth`) <a href="https://etherscan.io/address/0x39E0Df70F9fbC2b7902f967Fd4bFb036476E9f14" target="_blank" rel="noopener noreferrer" title="Open on Etherscan"><IconExternalLink /></a>   |
 | **SHIB**   | `0xBc7277e8fa7eD2108f3fd05316533E70b866c9Cf` (`timelockshib.shi4gud.eth`) <a href="https://etherscan.io/address/0xBc7277e8fa7eD2108f3fd05316533E70b866c9Cf" target="_blank" rel="noopener noreferrer" title="Open on Etherscan"><IconExternalLink /></a>   |
+| **PEPE**   | `0xA7c30B15C84DAE842D57E0f7795d24f84092b105` (`timelockpepe.shi4gud.eth`) <a href="https://etherscan.io/address/0xA7c30B15C84DAE842D57E0f7795d24f84092b105" target="_blank" rel="noopener noreferrer" title="Open on Etherscan"><IconExternalLink /></a>   |
+| **FLOKI**  | `0x4bc34bd49CA2b5B8ac6E17d1b2A553365Af2866e` (`timelockfloki.shi4gud.eth`) <a href="https://etherscan.io/address/0x4bc34bd49CA2b5B8ac6E17d1b2A553365Af2866e" target="_blank" rel="noopener noreferrer" title="Open on Etherscan"><IconExternalLink /></a>   |
+| **BOBO**   | `0xc16c681ae3624C95720dA776C4eeB43b2b89C6f7` (`timelockbobo.shi4gud.eth`) <a href="https://etherscan.io/address/0xc16c681ae3624C95720dA776C4eeB43b2b89C6f7" target="_blank" rel="noopener noreferrer" title="Open on Etherscan"><IconExternalLink /></a>   |
 
 ## Official Multisig Wallet
 
