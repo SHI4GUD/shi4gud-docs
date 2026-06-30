@@ -582,6 +582,48 @@ Replace the address and the env file with the ones that apply.
 
 ---
 
+## Verifying the Last Winner
+
+You can independently verify that the most recently rewarded winner was selected **correctly and fairly**. The node replays the winner calculation against on-chain state and compares the result to the address that was actually rewarded, so you can confirm the selection wasn't tampered with.
+
+This is a **read-only** check: it does not send any transaction, spends no gas, and can be run at any time without affecting your node's normal operation.
+
+### Run the verification
+
+Run the command from your **shi4gud-node** folder (e.g. `/root/shi4gud-node`), using the `.env` file for the bank you want to check:
+
+```bash
+( set -a && source .env.1 && set +a && ./ktoc -verifyLastWinner -chunkSize 10000 )
+```
+
+- **Env file:** Use the `.env` file that matches the bank you want to verify (`.env.1` for SHI, `.env.2` for SHIB, etc.), as set up in [Step 7: Configuration](#step-7-configuration).
+- That env file must have a valid `ETH_ENDPOINT` (your Alchemy key) and `KT_ADDR`, since the check needs an RPC connection to read contract state.
+- **`-chunkSize`** controls how many blocks are fetched per request. `10000` is a safe default that matches the multi-bank guidance elsewhere in this guide. See the note below on why this matters for verification.
+
+> **Note — the first run walks the full history.** To verify the last winner, the node scans every block from your `KT_START_BLOCK` up to the current chain tip to rebuild its event cache. On the **first** verification for a bank (before the cache is populated) you'll see a long stream of lines like `Missing cached chunk … (expected hit) - re-querying` followed by `Fetched <range>: N stakes, N withdraws`. This is normal — it's the cache being built, not an error.
+>
+> With the default `-chunkSize 500`, a large history is split into thousands of tiny requests, so this can scroll for a long time. Using **`-chunkSize 10000`** (as shown above) cuts the number of requests by ~20×. If your ranges are coming back mostly empty (`0 stakes, 0 withdraws`), you can push it higher (e.g. `-chunkSize 50000`) to finish faster; the only risk is that an event-dense range produces an oversized response that Alchemy rejects or times out — if you see errors instead of clean `Fetched` lines, lower it again. Once the first pass completes, the cache is saved and subsequent runs are much faster and lighter on your RPC quota.
+
+### What Success Looks Like
+
+When the check runs, you'll see the operation header followed by the verification result:
+
+```text
+---- [HH:MM:SS] VERIFYING LAST WINNER ----
+```
+
+If the replayed calculation matches the address that was rewarded on-chain, the winner was selected correctly and no further action is needed. The command runs once and exits.
+
+If verification fails, you'll see an error line similar to:
+
+```text
+Failed to verify last winner: <reason>
+```
+
+**Tip:** To verify another bank, just swap the env file — e.g. `( set -a && source .env.2 && set +a && ./ktoc -verifyLastWinner -chunkSize 10000 )` for SHIB.
+
+---
+
 ## Running Multiple Nodes on the Same Server
 
 You can run more than two nodes on the same server. Each node needs its own `.env` file and one entry in `ecosystem.config.js`. The steps below add a **third** node (for example a PEPE bank); repeat the same pattern for more.
